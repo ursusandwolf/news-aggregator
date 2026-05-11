@@ -30,4 +30,9 @@ public class NewsController {
             @RequestParam(defaultValue = "5") int limit) {
         return aggregationService.getFilings(ticker, limit);
     }
+
+    @GetMapping("/macro")
+    public List<com.moneynews.domain.model.MacroEvent> getMacro() {
+        return aggregationService.getMacroEvents();
+    }
 }

@@ -18,6 +18,7 @@ public class NewsAggregationService {
 
     private final List<NewsProvider> providers;
     private final List<com.moneynews.domain.port.FilingProvider> filingProviders;
+    private final List<com.moneynews.domain.port.MacroProvider> macroProviders;
     private final DeduplicationService deduplicationService;
     
     // Using a virtual thread executor for parallel I/O
@@ -44,6 +45,12 @@ public class NewsAggregationService {
                 .flatMap(provider -> provider.fetchFilings(ticker, limit).stream())
                 .sorted((a, b) -> b.filedAt().compareTo(a.filedAt()))
                 .limit(limit)
+                .collect(Collectors.toList());
+    }
+
+    public List<com.moneynews.domain.model.MacroEvent> getMacroEvents() {
+        return macroProviders.stream()
+                .flatMap(provider -> provider.fetchLatestEvents().stream())
                 .collect(Collectors.toList());
     }
 }
