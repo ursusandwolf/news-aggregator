@@ -2,6 +2,7 @@ com/moneynews/domain/port/NewsProvider.class
 com/moneynews/domain/port/FilingProvider.class
 com/moneynews/domain/model/NewsItem.class
 com/moneynews/domain/model/Filing.class
+com/moneynews/integration/rss/RssNewsProvider.class
 com/moneynews/integration/yahoo/YahooFinanceNewsProvider.class
 com/moneynews/application/NewsAggregationService.class
 com/moneynews/integration/sec/EdgarFilingProvider.class

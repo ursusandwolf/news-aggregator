@@ -7,4 +7,5 @@
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/integration/sec/EdgarFilingProvider.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/application/DeduplicationService.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/domain/port/FilingProvider.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/integration/rss/RssNewsProvider.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/integration/yahoo/YahooFinanceNewsProvider.java
