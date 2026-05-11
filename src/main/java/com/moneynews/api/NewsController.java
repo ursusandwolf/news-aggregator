@@ -9,21 +9,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/news")
 @RequiredArgsConstructor
 public class NewsController {
 
-    private final NewsAggregationService aggregationService;
+private final NewsAggregationService aggregationService;
+private final com.moneynews.application.CommodityNewsService commodityNewsService;
 
-    @GetMapping("/{ticker}")
-    public List<NewsItem> getNews(
-            @PathVariable String ticker,
-            @RequestParam(defaultValue = "10") int limit) {
-        return aggregationService.aggregateNews(ticker, limit);
-    }
+@GetMapping("/{ticker}")
+public List<NewsItem> getNews(
+        @PathVariable String ticker,
+        @RequestParam(defaultValue = "10") int limit) {
+    return aggregationService.aggregateNews(ticker, limit);
+}
 
+@GetMapping("/commodities")
+public Map<String, List<NewsItem>> getCommodityNews(
+        @RequestParam(defaultValue = "3") int limit) {
+    return commodityNewsService.getCommodityNews(limit);
+}
+
+@GetMapping("/commodities/{name}")
+public List<NewsItem> getNewsForCommodity(
+        @PathVariable String name,
+        @RequestParam(defaultValue = "10") int limit) {
+    return commodityNewsService.getNewsForCommodity(name, limit);
+}
     @GetMapping("/{ticker}/filings")
     public List<com.moneynews.domain.model.Filing> getFilings(
             @PathVariable String ticker,
