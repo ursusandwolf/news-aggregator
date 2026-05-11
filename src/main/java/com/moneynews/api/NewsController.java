@@ -16,28 +16,28 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class NewsController {
 
-private final NewsAggregationService aggregationService;
-private final com.moneynews.application.CommodityNewsService commodityNewsService;
+    private final NewsAggregationService aggregationService;
+    private final com.moneynews.application.MarketContextService marketContextService;
 
-@GetMapping("/{ticker}")
-public List<NewsItem> getNews(
-        @PathVariable String ticker,
-        @RequestParam(defaultValue = "10") int limit) {
-    return aggregationService.aggregateNews(ticker, limit);
-}
+    @GetMapping("/{ticker}")
+    public List<NewsItem> getNews(
+            @PathVariable String ticker,
+            @RequestParam(defaultValue = "10") int limit) {
+        return aggregationService.aggregateNews(ticker, limit);
+    }
 
-@GetMapping("/commodities")
-public Map<String, List<NewsItem>> getCommodityNews(
-        @RequestParam(defaultValue = "3") int limit) {
-    return commodityNewsService.getCommodityNews(limit);
-}
+    @GetMapping("/market-context")
+    public Map<String, List<NewsItem>> getMarketOverview(
+            @RequestParam(defaultValue = "3") int limit) {
+        return marketContextService.getMarketOverview(limit);
+    }
 
-@GetMapping("/commodities/{name}")
-public List<NewsItem> getNewsForCommodity(
-        @PathVariable String name,
-        @RequestParam(defaultValue = "10") int limit) {
-    return commodityNewsService.getNewsForCommodity(name, limit);
-}
+    @GetMapping("/market-context/{category}")
+    public List<NewsItem> getNewsForCategory(
+            @PathVariable String category,
+            @RequestParam(defaultValue = "10") int limit) {
+        return marketContextService.getNewsForCategory(category, limit);
+    }
     @GetMapping("/{ticker}/filings")
     public List<com.moneynews.domain.model.Filing> getFilings(
             @PathVariable String ticker,
