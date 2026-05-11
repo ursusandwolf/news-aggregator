@@ -1,3 +1,10 @@
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/application/NewsAggregationService.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/api/NewsController.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/domain/port/NewsProvider.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/MoneyNewsApplication.java
 /Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/domain/model/NewsItem.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/domain/model/Filing.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/integration/sec/EdgarFilingProvider.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/application/DeduplicationService.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/domain/port/FilingProvider.java
+/Users/alex/IdeaProjects/stockpicker/moneynews/src/main/java/com/moneynews/integration/yahoo/YahooFinanceNewsProvider.java
